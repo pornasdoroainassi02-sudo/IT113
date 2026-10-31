@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindHub | PH Directory</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">Mind<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="main.html">Conditions</a></li>
+        <li><a href="directory.html" class="active">PH Directory</a></li>
+        <li><a href="vweb.html">Vent Corner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Philippine Mental Health Directory</h1>
+      <p>Find nearby institutions, medical centers, and immediate support across the Philippines.</p>
+    </div>
+
+    <!-- Emergency Hotline Card -->
+    <div class="hotline-banner">
+      <h3>🚨 National Emergency Hotlines (Philippines)</h3>
+      <p><strong>National Emergency Number:</strong> 911</p>
+      <p><strong>NCMH Crisis Hotline:</strong> 1553 (Toll-Free) / 0917-899-USAP (8727)</p>
+      <p><strong>Hopeline Philippines:</strong> (02) 8804-4673 / 0917-558-4673</p>
+    </div>
+
+    <!-- Search filter -->
+    <div class="directory-controls">
+      <input type="text" id="searchInput" placeholder="Search by facility name or location..." onkeyup="filterDirectory()">
+    </div>
+
+    <!-- List of Locations -->
+    <div class="directory-grid" id="facilityGrid">
+      
+      <div class="facility-card">
+        <span class="region-badge">NCR - Metro Manila</span>
+        <h3>National Center for Mental Health (NCMH)</h3>
+        <p><strong>Location:</strong> Nueve de Febrero St, Mandaluyong City</p>
+        <p><strong>Services:</strong> 24/7 Psychiatric Emergency, Outpatient Consultation, Rehabilitation.</p>
+        <p><strong>Contact:</strong> (02) 8531-9001</p>
+      </div>
+
+      <div class="facility-card">
+        <span class="region-badge">NCR - Metro Manila</span>
+        <h3>UP-PGH Department of Psychiatry</h3>
+        <p><strong>Location:</strong> Taft Avenue, Ermita, Manila</p>
+        <p><strong>Services:</strong> Free/Subsidized Consultation, Psychotherapy, Child Psychiatry.</p>
+        <p><strong>Contact:</strong> (02) 8554-8400</p>
+      </div>
+
+      <div class="facility-card">
+        <span class="region-badge">NCR - Metro Manila</span>
+        <h3>Ateneo Bulatao Center for Psychological Services</h3>
+        <p><strong>Location:</strong> Ateneo de Manila University, Quezon City</p>
+        <p><strong>Services:</strong> Counseling, Psychotherapy, Brief Psychological First Aid.</p>
+        <p><strong>Contact:</strong> bulataocenter.ls@ateneo.edu</p>
+      </div>
+
+      <div class="facility-card">
+        <span class="region-badge">Visayas</span>
+        <h3>Vicente Sotto Memorial Medical Center (VSMMC)</h3>
+        <p><strong>Location:</strong> B. Rodriguez St, Cebu City</p>
+        <p><strong>Services:</strong> Behavioral Medicine, Psychiatric Outpatient Services.</p>
+        <p><strong>Contact:</strong> (032) 253-9891</p>
+      </div>
+
+      <div class="facility-card">
+        <span class="region-badge">Mindanao</span>
+        <h3>Southern Philippines Medical Center (SPMC)</h3>
+        <p><strong>Location:</strong> J.P. Laurel Ave, Bajada, Davao City</p>
+        <p><strong>Services:</strong> Institute of Psychiatry and Behavioral Medicine.</p>
+        <p><strong>Contact:</strong> (082) 227-2731</p>
+      </div>
+
+      <div class="facility-card">
+        <span class="region-badge">Luzon - Bicol Region</span>
+        <h3>Bicol Medical Center (BMC) - Department of Psychiatry</h3>
+        <p><strong>Location:</strong> Concepcion Pequeña, Naga City, Camarines Sur</p>
+        <p><strong>Services:</strong> Acute Psychiatric Care, Outpatient Mental Health Counseling.</p>
+        <p><strong>Contact:</strong> (054) 472-0557</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 MindHub Philippines | Mental Health Awareness Platform</p>
+  </footer>
+
+  <script>
+    function filterDirectory() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.facility-card');
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

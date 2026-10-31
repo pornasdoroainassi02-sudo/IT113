@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindHub | Mental Health Conditions</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">Mind<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="main.html" class="active">Conditions</a></li>
+        <li><a href="directory.html">PH Directory</a></li>
+        <li><a href="vweb.html">Vent Corner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    
+    <!-- Sign In / Register Section -->
+    <div id="authSection" class="auth-wrapper">
+      <h2>Welcome to MindHub</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+      <div class="toggle-auth">
+      </div>
+    </div>
+
+    <!-- Main Conditions Content (Flexbox Grid) -->
+    <div id="conditionsSection" style="display: none;">
+      <div class="page-header">
+        <h1>Mental Health Conditions</h1>
+        <p>Understanding symptoms, physiological effects, and affected demographics.</p>
+      </div>
+
+      <div class="disorders-flex-container">
+        
+        <div class="disorder-card-item">
+          <h3>Major Depressive Disorder (MDD)</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Persistent sadness, loss of interest in activities, fatigue, feelings of worthlessness, trouble concentrating.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Sleep disturbances, changes in appetite/weight, chronic physical pain, lowered immunity.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Young adults (18–25), females, individuals with a family history of depression.</p>
+          </div>
+        </div>
+
+        <div class="disorder-card-item">
+          <h3>Generalized Anxiety Disorder (GAD)</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Excessive worry, restlessness, muscle tension, difficulty controlling worry, irritability.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Rapid heart rate, gastrointestinal problems, insomnia, chronic muscle stiffness.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Adults aged 30–50, students under academic stress, working professionals.</p>
+          </div>
+        </div>
+
+        <div class="disorder-card-item">
+          <h3>Bipolar Disorder</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Extreme mood swings ranging from manic highs (euphoria, hyperactivity) to depressive lows.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Disrupted circadian rhythm, impulse decisions, physical exhaustion post-mania.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Typically diagnosed in late teens or early adulthood (ages 15–25).</p>
+          </div>
+        </div>
+
+        <div class="disorder-card-item">
+          <h3>Post-Traumatic Stress Disorder (PTSD)</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Flashbacks, nightmares, severe anxiety, intrusive memories, avoidance of triggers.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Hyperarousal, panic attacks, high stress hormone (cortisol) production, insomnia.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Survivors of trauma, disaster survivors, first responders, military veterans.</p>
+          </div>
+        </div>
+
+        <div class="disorder-card-item">
+          <h3>Obsessive-Compulsive Disorder (OCD)</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Unwanted repetitive thoughts (obsessions) and urge to perform routines (compulsions).</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Physical exhaustion from repetitive tasks, skin breakdown (e.g., from over-washing hands).</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Children, teens, and young adults; often begins in early childhood or adolescence.</p>
+          </div>
+        </div>
+
+        <div class="disorder-card-item">
+          <h3>Attention-Deficit/Hyperactivity Disorder (ADHD)</h3>
+          <div class="disorder-section">
+            <h4>Symptoms</h4>
+            <p>Inattention, executive dysfunction, hyperactivity, impulsivity, difficulty organizing tasks.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Effects</h4>
+            <p>Restlessness, sleep disruption, difficulty regulating emotional responses.</p>
+          </div>
+          <div class="disorder-section">
+            <h4>Commonly Affects</h4>
+            <p>Children, adolescents, and adults across all gender demographics.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 MindHub Philippines | Mental Health Awareness Platform</p>
+  </footer>
+
+  <script>
+    // Accounts Array
+    const defaultAccounts = [
+      { username: 'ainapornasdoro_', password: 'aina123' }
+    ];
+    let registeredAccounts = JSON.parse(localStorage.getItem('mindhub_users')) || [];
+
+    const loginForm = document.getElementById('loginForm');
+    const authSection = document.getElementById('authSection');
+    const conditionsSection = document.getElementById('conditionsSection');
+
+    // Auto-login check
+    if (localStorage.getItem('mindhub_logged_in') === 'true') {
+      authSection.style.display = 'none';
+      conditionsSection.style.display = 'block';
+    }
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const userVal = document.getElementById('username').value.trim();
+      const passVal = document.getElementById('password').value.trim();
+
+      const foundUser = [...defaultAccounts, ...registeredAccounts].find(
+        acc => acc.username === userVal && acc.password === passVal
+      );
+
+      if (foundUser) {
+        localStorage.setItem('mindhub_logged_in', 'true');
+        authSection.style.display = 'none';
+        conditionsSection.style.display = 'block';
+      } else {
+        alert('Invalid credentials! Try using: ainapornasdoro_ / aina123');
+      }
+    });
+  </script>
+</body>
+</html>

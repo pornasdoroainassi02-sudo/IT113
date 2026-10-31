@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+  <title>MindHub | Vent Corner</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="main.html" class="logo">Mind<span>Hub</span></a>
+      <ul class="nav-links">
+        <li><a href="main.html">Conditions</a></li>
+        <li><a href="directory.html">PH Directory</a></li>
+        <li><a href="vweb.html" class="active">Vent Corner</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Safe Space Vent Corner</h1>
+      <p>Express your thoughts and feelings freely. Nothing is stored or recorded.</p>
+    </div>
+
+    <div class="vent-box">
+      <form id="ventForm">
+        <div class="form-group">
+          <label for="ventText">Write down what's on your mind...</label>
+          <textarea id="ventText" placeholder="Take a deep breath and type here. This is a judgment-free space..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Release Thoughts</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="helpModal">
+    <div class="modal-content">
+      <h3>Thank You for Sharing</h3>
+      <p>Your thoughts have been released. Remember that your feelings are valid, and you don't have to carry everything alone.</p>
+      
+      <div class="modal-hotlines">
+        <strong>Need someone to talk to right now?</strong>
+        <p>📞 <strong>Emergency Hotline:</strong> 911</p>
+        <p>📞 <strong>NCMH Hotline:</strong> 1553</p>
+        <p>📞 <strong>Hopeline PH:</strong> (02) 8804-4673</p>
+      </div>
+
+      <button class="btn" onclick="closeModal()">Close & Clear</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 MindHub Philippines | Mental Health Awareness Platform</p>
+  </footer>
+
+  <script>
+    const ventForm = document.getElementById('ventForm');
+    const helpModal = document.getElementById('helpModal');
+    const ventText = document.getElementById('ventText');
+
+    ventForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      helpModal.style.display = 'flex';
+    });
+
+    function closeModal() {
+      helpModal.style.display = 'none';
+      ventText.value = '';
+    }
+  </script>
+</body>
+</html>
